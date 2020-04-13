@@ -1,9 +1,9 @@
 package appender
 
 import (
+	"github.com/TobinMeng/go_common/log/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"go_common/log/config"
 	"os"
 )
 
@@ -24,7 +24,7 @@ func NewConsoleAppender(formatter string, timeFmt string) *ConsoleAppender {
 }
 
 func (c *ConsoleAppender) GetCore(level int) zapcore.Core {
-	encoder  := getEncoder(c.Formatter,c.TimeFmt)
+	encoder := getEncoder(c.Formatter, c.TimeFmt)
 	lvl := zap.NewAtomicLevelAt(config.Levels[level])
 	return zapcore.NewCore(encoder, zapcore.Lock(os.Stdout), lvl)
 }

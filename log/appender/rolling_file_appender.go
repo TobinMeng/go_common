@@ -1,9 +1,9 @@
 package appender
 
 import (
+	"github.com/TobinMeng/go_common/log/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"go_common/log/config"
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 

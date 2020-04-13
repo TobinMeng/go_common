@@ -1,10 +1,10 @@
-package log
+package go_common
 
 import (
 	"fmt"
+	"github.com/TobinMeng/go_common/log/appender"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"go_common/log/appender"
 )
 
 type ZapLogger struct {
@@ -20,10 +20,10 @@ func NewZapLogger(level int) *ZapLogger {
 func (z *ZapLogger) Init() {
 	var cores = make([]zapcore.Core, 0)
 	for _, appender := range z.appenders {
-		core :=appender.GetCore(z.Level)
-		cores = append(cores,core)
+		core := appender.GetCore(z.Level)
+		cores = append(cores, core)
 	}
-	z.logger = zap.New(zapcore.NewTee(cores...), zap.AddCallerSkip(2),zap.AddCaller())
+	z.logger = zap.New(zapcore.NewTee(cores...), zap.AddCallerSkip(2), zap.AddCaller())
 }
 
 func (z *ZapLogger) Debug(format string, args ...interface{}) {
