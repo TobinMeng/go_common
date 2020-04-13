@@ -1,10 +1,10 @@
 package appender
 
 import (
+	"github.com/TobinMeng/go_common/log/config"
 	rotates "github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"go_common/log/config"
 	"time"
 )
 

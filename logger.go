@@ -1,9 +1,8 @@
-package log
+package go_common
 
 import (
-	"go_common/log/appender"
+	"github.com/TobinMeng/go_common/log/appender"
 )
-
 
 // Logger 日志器
 type Logger interface {

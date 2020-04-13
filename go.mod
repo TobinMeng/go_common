@@ -1,4 +1,4 @@
-module git.code.oa.com/APD_Resource/go_common
+module github.com/TobinMeng/go_common
 
 go 1.13
 
